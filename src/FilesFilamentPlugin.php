@@ -7,6 +7,10 @@ namespace Liberu\ControlPanel\FilesFilament;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 use Liberu\ControlPanel\FilesFilament\Resources\FileEntryResource;
+use Liberu\ControlPanel\FilesFilament\Resources\FilePermissionResource;
+use Liberu\ControlPanel\FilesFilament\Resources\FileQuotaResource;
+use Liberu\ControlPanel\FilesFilament\Resources\HomeDirectoryResource;
+use Liberu\ControlPanel\FilesFilament\Resources\SftpAccountResource;
 
 final class FilesFilamentPlugin implements Plugin
 {
@@ -22,7 +26,7 @@ final class FilesFilamentPlugin implements Plugin
 
     public function register(Panel $panel): void
     {
-        $panel->resources([FileEntryResource::class]);
+        $panel->resources([FileEntryResource::class, FileQuotaResource::class, FilePermissionResource::class, HomeDirectoryResource::class, SftpAccountResource::class]);
     }
 
     public function boot(Panel $panel): void {}
